@@ -42,7 +42,8 @@
 //
 #define X_STOP_PIN         P1_29
 #define Y_STOP_PIN         P1_28
-#define Z_STOP_PIN         P1_27
+//#define Z_STOP_PIN         P1_27 - JST
+#define Z_STOP_PIN         P0_10
 
 //
 // Servos
