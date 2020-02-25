@@ -476,9 +476,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 22.2
-  #define DEFAULT_Ki 1.08
-  #define DEFAULT_Kd 114
+  #define DEFAULT_Kp 23.19 //22.2
+  #define DEFAULT_Ki 2.14 //1.08
+  #define DEFAULT_Kd 62.8
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -527,9 +527,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  #define DEFAULT_bedKp 29.97
+  #define DEFAULT_bedKi 1.90
+  #define DEFAULT_bedKd 315.16
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -719,14 +719,14 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 95 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 200, 96 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 2020, 96 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 350, 350, 15, 60 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
+#define DEFAULT_MAX_FEEDRATE          { 350, 350, 5, 14 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -739,7 +739,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 300, 10000 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
+#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 100, 10000 } // JST - 2-19-2020 Based on Printrbot Plus Metal 1504
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -778,7 +778,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    4.5 // May be used by Linear Advance
+#define DEFAULT_EJERK    5 // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -922,7 +922,6 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-//#define NOZZLE_TO_PROBE_OFFSET { -40, -10, -1.5 }
 #define NOZZLE_TO_PROBE_OFFSET { 20, 0, 0 }
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 20
@@ -962,12 +961,12 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE   5 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -4 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
